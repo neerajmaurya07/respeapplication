@@ -56,6 +56,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :test do
   gem "capybara"
   gem 'selenium-webdriver', '2.53.4'
-  
-
 end
