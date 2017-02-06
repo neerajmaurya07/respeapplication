@@ -6,7 +6,7 @@ feature 'Edit Articale' do
     visit edit_articale_path(@articale)
   end
 
-  scenario 'Articale was successfully updated.' do
+  scenario 'Articale was successfully updated.', :js, :driver => :chrome do
     fill_in 'articale[title]', with: 'Udate testing'
     fill_in 'articale[content]', with: 'Udate testing body'
     click_on 'Update Articale'

@@ -8,7 +8,7 @@ feature 'Delete Articale' do
     
   end
 
-  scenario 'Delete one Articale' do
+  scenario 'Delete one Articale', :js, :driver => :chrome do
     expect{ @articale.destroy
      }.to change(Articale, :count).by(-1)
   end

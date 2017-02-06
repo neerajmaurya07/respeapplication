@@ -7,7 +7,7 @@ feature 'Display Articale' do
     # click_link 'Show'
     # find(:xpath, "//a[@href='/articales/#{@articale.id}']").click
   end
-  scenario 'Articale' do
+  scenario 'Articale', :js, :driver => :chrome do
     expect(page).to have_content 'Article'
      expect(page).to have_content @articale.content
 
