@@ -1,20 +1,16 @@
+require 'rails_helper'
+require 'capybara/rspec'
 feature 'Edit Articale' do
 	before do
-    @article = FactoryGirl.create(:article)
-    visit articales_path
-    click_on 'Edit'
+    @articale = FactoryGirl.create(:articale)
+    visit edit_articale_path(@articale)
   end
 
-  scenario 'with correct information' do
-    fill_in 'Block Name', with: 'Internal Medicine'
-    click_on 'Update Block'
-    expect(page).to have_content 'Internal Medicine'
-  end
-
-  scenario 'without name info should fail' do
-  	fill_in 'Block Name', with: ''
-    click_on 'Update Block'
-    expect(page).to have_content 'Name can\'t be blank'
+  scenario 'Articale was successfully updated.' do
+    fill_in 'articale[title]', with: 'Udate testing'
+    fill_in 'articale[content]', with: 'Udate testing body'
+    click_on 'Update Articale'
+    expect(page).to have_content 'Articale was successfully updated.'
   end
 
 end
